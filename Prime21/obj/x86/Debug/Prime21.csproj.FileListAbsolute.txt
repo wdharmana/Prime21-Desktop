@@ -37,3 +37,5 @@ C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.csproj
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.exe
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.pdb
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmSchedule.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmTrans.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmTransList.resources

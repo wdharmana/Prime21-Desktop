@@ -44,5 +44,12 @@ namespace Prime21
             FrmSchedule frm = new FrmSchedule();
             frm.ShowDialog();
         }
+
+        private void transactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //FrmTransList frm = new FrmTransList();
+            SeatMap frm = new SeatMap();
+            frm.ShowDialog();
+        }
     }
 }

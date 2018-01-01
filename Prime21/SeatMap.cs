@@ -36,7 +36,7 @@ namespace Prime21
                 string alp = alpha[r];
 
                 top += width + 5;
-                int space = 0;
+                int space = panel1.Width + 20;
                
                 for (int i = 0; i < len; i++)
                 {
@@ -92,6 +92,7 @@ namespace Prime21
             panelScreen.Top = top + 60;
             panelScreen.Width = screenWidth;
             panelScreen.Height = 10;
+            panelScreen.Left = panel1.Width + 20;
 
         }
     }

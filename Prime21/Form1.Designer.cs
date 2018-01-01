@@ -123,6 +123,7 @@
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
+            this.transactionToolStripMenuItem.Click += new System.EventHandler(this.transactionToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

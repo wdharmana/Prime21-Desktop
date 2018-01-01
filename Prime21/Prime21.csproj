@@ -83,6 +83,18 @@
     <Compile Include="FrmStudio.Designer.cs">
       <DependentUpon>FrmStudio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrans.Designer.cs">
+      <DependentUpon>FrmTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransList.Designer.cs">
+      <DependentUpon>FrmTransList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeatMap.cs">
@@ -108,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudio.resx">
       <DependentUpon>FrmStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrans.resx">
+      <DependentUpon>FrmTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransList.resx">
+      <DependentUpon>FrmTransList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
