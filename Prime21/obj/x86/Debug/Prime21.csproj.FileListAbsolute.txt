@@ -1,0 +1,39 @@
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\bin\Debug\Prime21.exe
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\bin\Debug\Prime21.pdb
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.Form1.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.Properties.Resources.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.exe
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.pdb
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovie.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovieNew.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudioNew.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudio.resources
+c:\users\user\documents\visual studio 2010\Projects\Prime21\Prime21\obj\x86\Debug\Prime21.SeatMap.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.exe
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.pdb
+D:\150030432\Prime21\Prime21\bin\Debug\Prime21.exe
+D:\150030432\Prime21\Prime21\bin\Debug\Prime21.pdb
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudioNew.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.Form1.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovie.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovieNew.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudio.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.Properties.Resources.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.SeatMap.resources
+D:\150030432\Prime21\Prime21\obj\x86\Debug\Prime21.csproj.GenerateResource.Cache
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\bin\Debug\Prime21.exe
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\bin\Debug\Prime21.pdb
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.csprojResolveAssemblyReference.cache
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudioNew.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.Form1.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovie.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmMovieNew.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmStudio.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.Properties.Resources.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.SeatMap.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.csproj.GenerateResource.Cache
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.csproj.CoreCompileInputs.cache
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.exe
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.pdb
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmSchedule.resources
