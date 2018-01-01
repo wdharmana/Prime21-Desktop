@@ -132,7 +132,7 @@ namespace Prime21
             panelScreen.Top = top + 60;
             panelScreen.Width = screenWidth;
             panelScreen.Height = 10;
-            panelScreen.Left = 20;
+            panelScreen.Left = 30;
 
             var margin = panelScreen.Margin;
             margin.Bottom = 20;
@@ -198,6 +198,12 @@ namespace Prime21
 
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnNext.Text = "PICK SEAT";
+            cmbSchedule.Enabled = true;
+            btnCancel.Visible = false;
+        }
 
         void getDetailSchedule(int id)
         {
@@ -219,7 +225,8 @@ namespace Prime21
                     rowSeat = Convert.ToInt32(dr["row_seat"].ToString());
                     columnSeat = Convert.ToInt32(dr["column_seat"].ToString());
                     price = Convert.ToInt32(dr["price"].ToString());
-                    lblTotal.Text = ""+price;
+                    lblTotal.Text = ""+(price*toInt(txtQty));
+                  
                 }
                 else
                 {
@@ -239,10 +246,26 @@ namespace Prime21
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            myseats = new List<String>();
            
-            draw();
-            panelScreen.Visible = true;
+
+            
+
+            if (btnNext.Text == "PICK SEAT")
+            {
+                myseats = new List<String>();
+                draw();
+                panelScreen.Visible = true;
+
+                btnNext.Text = "COMPLETE";
+                btnCancel.Visible = true;
+                cmbSchedule.Enabled = false;
+            } else if(btnNext.Text == "COMPLETE")
+            {
+                if(myseats.Count < toInt(txtQty))
+                {
+                    MessageBox.Show("Please select " + toInt(txtQty) + " seat(s).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
 
         }

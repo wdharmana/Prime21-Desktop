@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelScreen = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.lblTotal);
             this.panel1.Controls.Add(this.txtQty);
@@ -53,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(295, 480);
+            this.panel1.Size = new System.Drawing.Size(295, 465);
             this.panel1.TabIndex = 1;
             // 
             // btnNext
@@ -68,11 +70,9 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(17, 148);
+            this.lblTotal.Location = new System.Drawing.Point(17, 141);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(250, 54);
             this.lblTotal.TabIndex = 22;
@@ -121,7 +121,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(292, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(611, 480);
+            this.panel2.Size = new System.Drawing.Size(611, 465);
             this.panel2.TabIndex = 2;
             // 
             // panelScreen
@@ -132,17 +132,29 @@
             this.panelScreen.Size = new System.Drawing.Size(859, 28);
             this.panelScreen.TabIndex = 1;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(16, 264);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(251, 39);
+            this.btnCancel.TabIndex = 24;
+            this.btnCancel.Text = "CHANGE";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // SeatMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(903, 480);
+            this.ClientSize = new System.Drawing.Size(903, 465);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "SeatMap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Seat Map";
+            this.Text = "New Transaction";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SeatMap_Load);
             this.ResizeEnd += new System.EventHandler(this.SeatMap_ResizeEnd);
             this.Resize += new System.EventHandler(this.SeatMap_Resize);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelScreen;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
