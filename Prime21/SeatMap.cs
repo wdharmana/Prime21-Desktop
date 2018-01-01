@@ -18,6 +18,7 @@ namespace Prime21
         private SqlConnection conn;
         private int rowSeat = 0, columnSeat = 0, idSch, price = 0;
         private List<Button> buttons = new List<Button>();
+        private List<String> seats = new List<String>(), myseats = new List<String>();
 
         public SeatMap()
         {
@@ -40,7 +41,7 @@ namespace Prime21
 
         private void draw()
         {
-
+            
             clear();
 
             var alpha = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
@@ -80,27 +81,46 @@ namespace Prime21
                     }
 
                     screenWidth += width + 10;
-                  
+
+                    String btnLabel = alp + (i + 1);
+
+
                     newButton.Left = space;
                     newButton.Top = top;
-                    newButton.Text = alp + (i + 1);
+                    newButton.Text = btnLabel;
                     newButton.Height = width;
 
                     newButton.Click += (source, e) =>
                     {
                         if (newButton.BackColor == Color.Red)
                         {
-                            MessageBox.Show("Already booked!");
+                            MessageBox.Show("Already booked!", "Warning");
+
+                        } else if(newButton.BackColor == Color.Yellow) {
+                            newButton.BackColor = Color.LightGreen;
+                            myseats.Remove(btnLabel);
                         }
                         else
                         {
-                            newButton.BackColor = Color.Yellow;
+                            if(checkSelected())
+                            {
+                                newButton.BackColor = Color.Yellow;
+                                myseats.Add(btnLabel);
+                            } else
+                            {
+                                MessageBox.Show("You've select "+toInt(txtQty)+" seat(s). Please check again");
+                            }
+                            
                         }
                     };
+                    
 
-                    if (i % 2 == 0)
+                    if(checkSeat(btnLabel))
                     {
                         newButton.BackColor = Color.Red;
+                    } else
+                    {
+                        newButton.BackColor = Color.LightGreen;
                     }
 
                     buttons.Add(newButton);
@@ -121,19 +141,35 @@ namespace Prime21
 
         }
 
+        Boolean checkSelected()
+        {
+            return myseats.Count() < toInt(txtQty);
+        }
+
+        int toInt(TextBox tb)
+        {
+            return Convert.ToInt32(tb.Text.ToString());
+        }
+
         void clear()
         {
 
             foreach(Button b in buttons)
             {
-                this.Controls.Remove(b);
+                panel2.Controls.Remove(b);
+                
             }
+            buttons = new List<Button>();
+            
            
         }
 
         private void cmbSchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getDetailSchedule(Convert.ToInt32(cmbSchedule.SelectedValue));
+            idSch = Convert.ToInt32(cmbSchedule.SelectedValue);
+            getDetailSchedule(idSch);
+            fetchSeat(idSch);
+
         }
 
         private void SeatMap_ResizeEnd(object sender, EventArgs e)
@@ -183,6 +219,7 @@ namespace Prime21
                     rowSeat = Convert.ToInt32(dr["row_seat"].ToString());
                     columnSeat = Convert.ToInt32(dr["column_seat"].ToString());
                     price = Convert.ToInt32(dr["price"].ToString());
+                    lblTotal.Text = ""+price;
                 }
                 else
                 {
@@ -202,11 +239,50 @@ namespace Prime21
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            
+            myseats = new List<String>();
+           
             draw();
             panelScreen.Visible = true;
 
 
         }
+
+        void fetchSeat(int id)
+        {
+            seats = new List<String>();
+            sql = "SELECT seat " +
+                " FROM tb_tickets WHERE trans_id  = " + id + "";
+
+           
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+                SqlCommand cmdSql = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmdSql.ExecuteReader();
+                while (dr.Read())
+                {
+                    seats.Add(dr["seat"].ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+       Boolean checkSeat(String nm)
+        {
+            return seats.Contains(nm);
+        }
+
     }
 }
