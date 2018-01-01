@@ -116,7 +116,7 @@ namespace Prime21
         void update()
         {
             sql = "UPDATE tb_studios "
-                + "SET title = '" + txtName.Text + "', "
+                + "SET name = '" + txtName.Text + "', "
                 + "row_seat = '" + txtRow.Text + "', "
                 + "column_seat = '" + txtColumn.Text + "' "
                 + "WHERE id = " + idItem + " ";
