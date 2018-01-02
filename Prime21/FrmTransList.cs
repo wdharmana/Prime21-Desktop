@@ -14,17 +14,19 @@ namespace Prime21
     public partial class FrmTransList : Form
     {
 
-        private string sql;
+        private string sql, userId;
         private SqlConnection conn;
 
         private int idItem;
 
-        public FrmTransList()
+        public FrmTransList(String uId)
         {
             InitializeComponent();
             dbConnection dbConn = new dbConnection();
             dbConn.createConn();
             conn = dbConn.masterConn;
+
+            userId = uId;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +57,7 @@ namespace Prime21
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            SeatMap frm = new SeatMap();
+            SeatMap frm = new SeatMap(userId);
             frm.ShowDialog();
         }
 

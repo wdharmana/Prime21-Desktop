@@ -19,13 +19,16 @@ namespace Prime21
         private int rowSeat = 0, columnSeat = 0, idSch, price = 0;
         private List<Button> buttons = new List<Button>();
         private List<String> seats = new List<String>(), myseats = new List<String>();
+        private String userId;
 
-        public SeatMap()
+        public SeatMap(String usrId)
         {
             InitializeComponent();
             dbConnection dbConn = new dbConnection();
             dbConn.createConn();
             conn = dbConn.masterConn;
+
+            userId = usrId; 
         }
 
         private void SeatMap_Load(object sender, EventArgs e)
@@ -283,7 +286,7 @@ namespace Prime21
 
                 sql = "INSERT INTO tb_transactions "
                   + "VALUES (CONVERT (date, SYSDATETIME()), CONVERT (time(0), SYSDATETIME())," +
-                  "'" + idSch + "','" + lblTotal.Text + "',"+txtPaid.Text+", '0')";
+                  "'" + idSch + "','" + lblTotal.Text + "',"+txtPaid.Text+", '"+userId+"')";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();

@@ -11,9 +11,12 @@ namespace Prime21
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        String userId;
+        public Form1(String id, String username)
         {
             InitializeComponent();
+            lblWelcome.Text = "Welcome " + username + ",";
+            userId = username;
         }
 
 
@@ -25,7 +28,7 @@ namespace Prime21
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void studioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +40,8 @@ namespace Prime21
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            FrmLogin frm = new FrmLogin();
+            frm.Dispose();
         }
 
         private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,7 +52,7 @@ namespace Prime21
 
         private void transactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmTransList frm = new FrmTransList();
+            FrmTransList frm = new FrmTransList(userId);
             //SeatMap frm = new SeatMap();
             //FrmUser frm = new FrmUser();
             frm.ShowDialog();
@@ -58,6 +63,11 @@ namespace Prime21
            FrmUser frm = new FrmUser();
             
             frm.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
