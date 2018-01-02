@@ -186,7 +186,7 @@ namespace Prime21
         {
                 sql = "SELECT CONCAT('(',tb_movies.title,') - ',tb_studios.name,' - ',tb_schedules.schedule_time) AS display, tb_schedules.id, tb_movies.title as movie, tb_studios.name as studio, schedule_time as time, price, status " +
                     "FROM tb_schedules LEFT JOIN tb_movies ON tb_schedules.movie_id = tb_movies.id " +
-                    "LEFT JOIN tb_studios ON tb_schedules.studio_id = tb_studios.id ORDER BY id DESC";
+                    "LEFT JOIN tb_studios ON tb_schedules.studio_id = tb_studios.id WHERE tb_schedules.status = 1 ORDER BY id DESC";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 conn.Open();
                 DataSet ds = new DataSet();
@@ -264,17 +264,65 @@ namespace Prime21
                 if(myseats.Count < toInt(txtQty))
                 {
                     MessageBox.Show("Please select " + toInt(txtQty) + " seat(s).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else
+                {
+                    save();
                 }
             }
 
 
         }
 
+        void save()
+        {
+
+            try
+            {
+                int trans_id = 0;
+                conn.Open();
+
+                sql = "INSERT INTO tb_transactions "
+                  + "VALUES (CONVERT (date, SYSDATETIME()), CONVERT (time(0), SYSDATETIME())," +
+                  "'" + idSch + "','" + lblTotal.Text + "',"+txtPaid.Text+", '0')";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+
+                sql = "SELECT MAX(id) AS id FROM tb_transactions";
+                SqlCommand cmdSql = new SqlCommand(sql, conn);
+                SqlDataReader dr = cmdSql.ExecuteReader();
+                if (dr.Read())
+                {
+                    trans_id = Convert.ToInt32(dr["id"].ToString());
+                }
+                dr.Close();
+
+                foreach (String seat in myseats)
+                {
+                    sql = "INSERT INTO tb_tickets "
+                   + "VALUES (" + trans_id + ", '" + seat + "')";
+
+                    SqlCommand cmdSeat = new SqlCommand(sql, conn);
+                    cmdSeat.ExecuteNonQuery();
+                }
+
+
+                conn.Close();
+
+                MessageBox.Show("Transaction successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                conn.Close();
+            }
+        }
+
         void fetchSeat(int id)
         {
             seats = new List<String>();
             sql = "SELECT seat " +
-                " FROM tb_tickets WHERE trans_id  = " + id + "";
+                " FROM tb_tickets INNER JOIN tb_transactions ON tb_tickets.trans_id = tb_transactions.id WHERE tb_transactions.schedule_id  = " + id + "";
 
            
             try

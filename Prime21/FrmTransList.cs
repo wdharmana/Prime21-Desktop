@@ -49,14 +49,19 @@ namespace Prime21
             dataGridView1.DataSource = datatable;
             conn.Close();
 
-            this.Visible = true;
+            //this.Visible = true;
 
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FrmTrans frm = new FrmTrans();
+            SeatMap frm = new SeatMap();
             frm.ShowDialog();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            getList();
         }
     }
 }

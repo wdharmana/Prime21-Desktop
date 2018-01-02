@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
@@ -37,7 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelScreen = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtPaid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +47,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.txtPaid);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.lblTotal);
@@ -57,6 +61,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 465);
             this.panel1.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(16, 264);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(251, 39);
+            this.btnCancel.TabIndex = 24;
+            this.btnCancel.Text = "CHANGE";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnNext
             // 
@@ -83,7 +98,7 @@
             // 
             this.txtQty.Location = new System.Drawing.Point(17, 101);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(44, 20);
+            this.txtQty.Size = new System.Drawing.Size(86, 20);
             this.txtQty.TabIndex = 21;
             this.txtQty.Text = "1";
             // 
@@ -132,16 +147,22 @@
             this.panelScreen.Size = new System.Drawing.Size(859, 28);
             this.panelScreen.TabIndex = 1;
             // 
-            // btnCancel
+            // txtPaid
             // 
-            this.btnCancel.Location = new System.Drawing.Point(16, 264);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(251, 39);
-            this.btnCancel.TabIndex = 24;
-            this.btnCancel.Text = "CHANGE";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtPaid.Location = new System.Drawing.Point(109, 101);
+            this.txtPaid.Name = "txtPaid";
+            this.txtPaid.Size = new System.Drawing.Size(158, 20);
+            this.txtPaid.TabIndex = 26;
+            this.txtPaid.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(106, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Paid";
             // 
             // SeatMap
             // 
@@ -176,5 +197,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelScreen;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtPaid;
+        private System.Windows.Forms.Label label1;
     }
 }
