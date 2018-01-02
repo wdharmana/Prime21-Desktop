@@ -241,7 +241,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmSchedule";
-            this.Text = "FrmSchedule";
+            this.Text = "Schedule";
             this.Load += new System.EventHandler(this.FrmSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

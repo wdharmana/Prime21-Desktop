@@ -84,6 +84,7 @@
             this.txtRow.Name = "txtRow";
             this.txtRow.Size = new System.Drawing.Size(78, 26);
             this.txtRow.TabIndex = 9;
+            this.txtRow.TextChanged += new System.EventHandler(this.txtRow_TextChanged);
             // 
             // txtName
             // 
@@ -91,6 +92,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(298, 20);
             this.txtName.TabIndex = 6;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblId
             // 
@@ -101,6 +103,7 @@
             this.lblId.Size = new System.Drawing.Size(47, 20);
             this.lblId.TabIndex = 5;
             this.lblId.Text = "Auto";
+            this.lblId.Click += new System.EventHandler(this.lblId_Click);
             // 
             // label5
             // 
@@ -110,6 +113,7 @@
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Row";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel1
             // 
@@ -119,6 +123,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 473);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox2
             // 
@@ -139,6 +144,7 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Studio Form";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtColumn
             // 
@@ -147,6 +153,7 @@
             this.txtColumn.Name = "txtColumn";
             this.txtColumn.Size = new System.Drawing.Size(78, 26);
             this.txtColumn.TabIndex = 13;
+            this.txtColumn.TextChanged += new System.EventHandler(this.txtColumn_TextChanged);
             // 
             // label3
             // 
@@ -156,6 +163,7 @@
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Column";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -165,6 +173,7 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -174,6 +183,7 @@
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 

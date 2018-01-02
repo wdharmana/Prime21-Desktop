@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Prime21
 {
-    public partial class FrmStudio : Form
+    public partial class FrmUser : Form
     {
 
         private string sql;
@@ -19,18 +19,17 @@ namespace Prime21
 
         private int idItem;
 
-        public FrmStudio()
+        public FrmUser()
         {
             InitializeComponent();
             dbConnection dbConn = new dbConnection();
             dbConn.createConn();
-            conn = dbConn.masterConn;    
+            conn = dbConn.masterConn;
         }
-
 
         void getList()
         {
-            sql = "SELECT * FROM tb_studios";
+            sql = "SELECT id, username,address FROM tb_users";
             conn.Open();
             SqlDataAdapter SDA = new SqlDataAdapter(sql, conn);
             SqlCommandBuilder SCB = new SqlCommandBuilder(SDA);
@@ -42,7 +41,7 @@ namespace Prime21
 
         void getDetail(int id)
         {
-            sql = "SELECT * FROM tb_studios WHERE id = " + id + "";
+            sql = "SELECT * FROM tb_users WHERE id = " + id + "";
             try
             {
                 if (conn.State == ConnectionState.Open)
@@ -55,9 +54,10 @@ namespace Prime21
                 if (dr.Read())
                 {
                     lblId.Text = id.ToString();
-                    txtName.Text = dr["name"].ToString();
-                    txtRow.Text = dr["row_seat"].ToString();
-                    txtColumn.Text = dr["column_seat"].ToString();
+                    txtUsername.Text = dr["username"].ToString();
+                    txtPassword.Text = "";
+                    txtAddress.Text = dr["address"].ToString();
+                    lblPass.Text = "New Password";
                 }
                 else
                 {
@@ -74,80 +74,76 @@ namespace Prime21
                 conn.Close();
             }
 
-            
+
         }
 
         void emptyNew()
         {
             lblId.Text = "Auto";
-            txtName.Text = "";
-            txtRow.Text = "0";
-            txtColumn.Text = "0";
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtAddress.Text = "";
+            lblPass.Text = "Password";
         }
-
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             emptyNew();
         }
 
-        void delete()
+        private void FrmUser_Load(object sender, EventArgs e)
         {
-            sql = "DELETE FROM tb_studios "
-                + "WHERE id = " + idItem + " ";
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            getList();
         }
 
-        void save()
-        {
-
-            sql = "INSERT INTO tb_studios "
-                + "VALUES ('" + txtName.Text + "', '" + txtRow.Text + "', '" + txtColumn.Text + "' )";
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-
-        void update()
-        {
-            sql = "UPDATE tb_studios "
-                + "SET name = '" + txtName.Text + "', "
-                + "row_seat = '" + txtRow.Text + "', "
-                + "column_seat = '" + txtColumn.Text + "' "
-                + "WHERE id = " + idItem + " ";
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-
-
-        private void btnSave_Click_1(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (lblId.Text == "Auto")
             {
 
                 save();
                 getList();
-                
             }
             else
             {
                 update();
                 getList();
             }
+        }
+
+
+        void save()
+        {
+
+            sql = "INSERT INTO tb_users "
+                + "VALUES ('" + txtUsername.Text + "',HASHBYTES('md5','" + txtPassword.Text + "'), '" + txtAddress.Text + "' )";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
             btnNew.PerformClick();
         }
 
-        private void FrmStudio_Load(object sender, EventArgs e)
+        void update()
         {
-            getList();
+
+            String pass = "";
+             
+            if(txtPassword.Text != "")
+            {
+                pass = "password = HASHBYTES('md5','" + txtPassword.Text + "'), ";
+            }
+
+            sql = "UPDATE tb_users "
+                + "SET username = '" + txtUsername.Text + "', "
+                + pass
+                + "address = '" + txtAddress.Text + "' "
+                + "WHERE id = " + idItem + " ";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -171,59 +167,16 @@ namespace Prime21
             btnNew.PerformClick();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        void delete()
         {
+            sql = "DELETE FROM tb_users "
+                + "WHERE id = " + idItem + " ";
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtRow_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblId_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtColumn_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            emptyNew();
         }
     }
 }

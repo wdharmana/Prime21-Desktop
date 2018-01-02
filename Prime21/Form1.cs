@@ -48,7 +48,15 @@ namespace Prime21
         private void transactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmTransList frm = new FrmTransList();
-           // SeatMap frm = new SeatMap();
+            //SeatMap frm = new SeatMap();
+            //FrmUser frm = new FrmUser();
+            frm.ShowDialog();
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           FrmUser frm = new FrmUser();
+            
             frm.ShowDialog();
         }
     }
