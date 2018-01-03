@@ -16,7 +16,7 @@ namespace Prime21
         {
             InitializeComponent();
             lblWelcome.Text = "Welcome " + username + ",";
-            userId = username;
+            userId = id;
         }
 
 
@@ -68,6 +68,12 @@ namespace Prime21
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 frm = new AboutBox1();
+            frm.ShowDialog();
         }
     }
 }

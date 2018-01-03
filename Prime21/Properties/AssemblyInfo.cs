@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Prime21")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("PRIME 21 Cinema Information System used for manage business activity for cinema from movie management until ticketing system.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Pemrograman Visual - STIKOM Bali")]
 [assembly: AssemblyProduct("Prime21")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
+[assembly: AssemblyCopyright("Copyright © STIKOM Bali 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

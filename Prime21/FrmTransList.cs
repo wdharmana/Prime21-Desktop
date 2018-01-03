@@ -61,6 +61,37 @@ namespace Prime21
             frm.ShowDialog();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            delete();
+            getList();
+        }
+
+        void delete()
+        {
+            sql = "DELETE FROM tb_transactions "
+                + "WHERE id = " + idItem;
+            
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                idItem = Convert.ToInt16(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["id"].FormattedValue.ToString());
+               
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         private void btnReload_Click(object sender, EventArgs e)
         {
             getList();

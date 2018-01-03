@@ -41,3 +41,4 @@ C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmTra
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmTransList.resources
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmUser.resources
 C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.FrmLogin.resources
+C:\Users\Dharmana\Downloads\Archive\Prime21\Prime21\obj\x86\Debug\Prime21.AboutBox1.resources

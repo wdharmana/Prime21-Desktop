@@ -43,6 +43,9 @@ namespace Prime21
                     String id       = dr["id"].ToString();
                     String username = dr["username"].ToString();
 
+                txtUsername.Text = "";
+                txtPassword.Text = "";
+
                     Form1 frm = new Form1(id, username);
                     frm.ShowDialog();
                 }
