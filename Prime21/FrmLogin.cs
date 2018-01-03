@@ -30,8 +30,7 @@ namespace Prime21
         private void button1_Click(object sender, EventArgs e)
         {
             sql = "SELECT * FROM tb_users WHERE username = '" + txtUsername.Text + "' AND password=HASHBYTES('md5', '"+txtPassword.Text+"')";
-            try
-            {
+           
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
@@ -51,16 +50,9 @@ namespace Prime21
                 {
                     MessageBox.Show("Username & password wrong!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
-            finally
-            {
+
                 conn.Close();
-            }
+          
         }
     }
 }

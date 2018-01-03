@@ -187,7 +187,8 @@ namespace Prime21
 
         void getSchedules()
         {
-                sql = "SELECT CONCAT('(',tb_movies.title,') - ',tb_studios.name,' - ',tb_schedules.schedule_time) AS display, tb_schedules.id, tb_movies.title as movie, tb_studios.name as studio, schedule_time as time, price, status " +
+                sql = "SELECT CAST('(' as VARCHAR) + CAST(tb_movies.title as VARCHAR) + CAST(') - ' as VARCHAR) + "+
+" CAST(tb_studios.name as varchar) + CAST(' - ' as varchar) + CAST(tb_schedules.schedule_time as varchar) AS display, tb_schedules.id, tb_movies.title as movie, tb_studios.name as studio, schedule_time as time, price, status " +
                     "FROM tb_schedules LEFT JOIN tb_movies ON tb_schedules.movie_id = tb_movies.id " +
                     "LEFT JOIN tb_studios ON tb_schedules.studio_id = tb_studios.id WHERE tb_schedules.status = 1 ORDER BY id DESC";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
