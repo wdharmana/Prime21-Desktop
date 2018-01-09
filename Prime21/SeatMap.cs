@@ -248,11 +248,20 @@ namespace Prime21
             }
         }
 
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lblTotal.Text = ""+ Convert.ToInt32(txtQty.Text) * price;
+            }catch(Exception ex)
+            {
+
+            }
+        }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
            
-
-            
 
             if (btnNext.Text == "PICK SEAT")
             {
@@ -265,9 +274,12 @@ namespace Prime21
                 cmbSchedule.Enabled = false;
             } else if(btnNext.Text == "COMPLETE")
             {
-                if(myseats.Count < toInt(txtQty))
+                if (myseats.Count < toInt(txtQty))
                 {
                     MessageBox.Show("Please select " + toInt(txtQty) + " seat(s).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                } else if(Convert.ToInt32(txtPaid.Text) < Convert.ToInt32(lblTotal.Text) ) {
+                    MessageBox.Show("Please pay minimum "+lblTotal.Text+"!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } else
                 {
                     save();

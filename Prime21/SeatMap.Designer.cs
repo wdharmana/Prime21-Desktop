@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPaid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelScreen = new System.Windows.Forms.Panel();
-            this.txtPaid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(295, 465);
             this.panel1.TabIndex = 1;
+            // 
+            // txtPaid
+            // 
+            this.txtPaid.Location = new System.Drawing.Point(109, 101);
+            this.txtPaid.Name = "txtPaid";
+            this.txtPaid.Size = new System.Drawing.Size(158, 20);
+            this.txtPaid.TabIndex = 26;
+            this.txtPaid.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(106, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Paid";
             // 
             // btnCancel
             // 
@@ -101,6 +118,7 @@
             this.txtQty.Size = new System.Drawing.Size(86, 20);
             this.txtQty.TabIndex = 21;
             this.txtQty.Text = "1";
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
             // 
             // label6
             // 
@@ -146,23 +164,6 @@
             this.panelScreen.Name = "panelScreen";
             this.panelScreen.Size = new System.Drawing.Size(859, 28);
             this.panelScreen.TabIndex = 1;
-            // 
-            // txtPaid
-            // 
-            this.txtPaid.Location = new System.Drawing.Point(109, 101);
-            this.txtPaid.Name = "txtPaid";
-            this.txtPaid.Size = new System.Drawing.Size(158, 20);
-            this.txtPaid.TabIndex = 26;
-            this.txtPaid.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(106, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Paid";
             // 
             // SeatMap
             // 
